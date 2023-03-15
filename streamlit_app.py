@@ -8,8 +8,6 @@ import streamlit as st
 # st.markdown("this is the header")
 # st.subheader("this is the subheader")
 # st.caption("this is the caption")
-# st.code("x=2021")
-# st.latex(r''' a+a r^1+a r^2+a r^3 ''')
 
 
 df = pd.DataFrame(
@@ -24,20 +22,26 @@ st.title ("My Streamlit App")
 
 # Set sidebar options
 st.sidebar.title("Menu")
-option = st.sidebar.selectbox("Select an option", ("Option 1", "Option 2", "Option 3"))
+option = st.sidebar.selectbox("Select an option", ("Line Chart", "Bar Chart", "Code"))
 
 # Create some charts
-if option == "Option 1":
-    st.title("Option 1")
+if option == "Line Chart":
+    st.title("Line Chart")
     # st.header("this is the markdown")
     # st.markdown("this is the header")
     # st.subheader("this is the subheader")
-    st.write("This is option 1.")
+    st.write("This is Line Chart")
     st.line_chart(df)
-elif option == "Option 2":
-    st.title("Option 2")
-    st.write("This is option 2.")
+elif option == "Bar Chart":
+    st.title("Bar Chart")
+    st.write("This is Bar Chart")
     st.bar_chart(df)
-elif option == "Option 3":
-    st.title("Option 3")
-    st.write("This is option 3.")
+elif option == "Code":
+    st.title("Code and LaTeX")
+    st.write("This is Code and LaTeX")
+    st.code("""
+                import pandas as pd
+                import numpy as np
+                import streamlit as st
+            """)
+    st.latex(r''' a+a r^1+a r^2+a r^3 ''')
