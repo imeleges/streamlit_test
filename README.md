@@ -1,2 +1,2 @@
-# streamlit_test
-Testing Streamlit Public Cloud functionality
+# Streamlit test
+Nothing fancy, just testing **Streamlit Community Cloud** functionality
