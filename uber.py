@@ -10,9 +10,7 @@ st.set_page_config(
     # layout="wide"
 )
 
-# # Set sidebar options
-# st.title("Uber pickups and drop off")
-# st.sidebar.title("Uber")
+st.title("Uber pickup and drop off in NYC")
 
 DATE_COLUMN = 'date/time'
 DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
