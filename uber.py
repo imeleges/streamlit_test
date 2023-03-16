@@ -10,7 +10,8 @@ st.set_page_config(
     # layout="wide"
 )
 
-st.title("Uber pickup and drop off in NYC")
+st.title("Uber pickups and drop off in NYC")
+st.markdown("Nothing fancy, just testing **Streamlit Community Cloud** functionality with streamlit **demo** data")
 
 DATE_COLUMN = 'date/time'
 DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
@@ -24,12 +25,12 @@ def load_data(nrows):
     data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
     return data
 
-load_status = st.warning('Wait, please. Loading all data and caching it for quicker access later.')
+load_status = st.warning('Wait, please. Loading all data and caching it for a quicker access later.')
 data = load_data(10000)
 load_status.success('All data has been loaded successfully and cached!')
 
-if st.button("⚠️ Clear All cache and reload"):
-    # Clear values from *all* all in-memory and on-disk data caches:
+# Clear values from *all* all in-memory and on-disk data caches:
+if st.button("⚠️ Clear all cache and reload"):
     st.cache_data.clear()
     st.experimental_rerun()
 
@@ -55,13 +56,3 @@ with col1:
 with col2:
     st.subheader(f'Map of all pickups at {hour_to_filter}:00')
     st.map(filtered_data)
-
-
-# Remove "Menu" and "Made with"
-# hide_streamlit_style = """
-#             <style>
-#             #MainMenu {visibility: hidden;}
-#             footer {visibility: hidden;}
-#             </style>
-#             """
-# st.markdown(hide_streamlit_style, unsafe_allow_html=True)
