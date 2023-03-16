@@ -16,7 +16,7 @@ st.markdown("Nothing fancy, just testing !SECRETS! 🤫 **Streamlit Community Cl
 DATE_COLUMN = 'date/time'
 DATA_URL = st.secrets["DATA_URL"]
 
-# @st.cache_data
+@st.cache_data
 def load_data(nrows):
     data = pd.read_csv(DATA_URL, nrows=nrows)
     lowercase = lambda x: str(x).lower()
