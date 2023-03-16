@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 st.title("Uber pickups and drop off in NYC")
-st.markdown("Nothing fancy, just testing !SECRETS! **Streamlit Community Cloud** functionality with streamlit **demo** data")
+st.markdown("Nothing fancy, just testing !SECRETS! 🤫 **Streamlit Community Cloud** functionality with streamlit **demo** data")
 
 DATE_COLUMN = 'date/time'
 DATA_URL = st.secrets["DATA_URL"]
