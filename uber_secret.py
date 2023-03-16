@@ -3,12 +3,12 @@ import streamlit as st
 import numpy as np
 import time
 import datetime
-# import os
+import os
 
-# st.write(
-#     "Has environment variables been set:",
-#     os.environ["DATA_URL"] == st.secrets["DATA_URL"],
-# )
+st.write(
+    "Has environment variables been set:",
+    os.environ["DATA_URL"] == st.secrets["DATA_URL"],
+)
 
 st.set_page_config(
     page_title="Uber",
@@ -20,7 +20,7 @@ st.title("Uber pickups and drop off in NYC")
 st.markdown("Nothing fancy, just testing **Streamlit Community Cloud** functionality with streamlit **demo** data")
 
 DATE_COLUMN = 'date/time'
-DATA_URL = ''
+# DATA_URL = ''
 # DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
 #          'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
 
